@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Rental HomePage</title>
+    <style>
+        body {
+          background-color: yellow;
+        }
+
+        h2 {
+          color: red;
+        }
+
+        header {
+          background-color: black;
+          color: white;
+          padding: 10px;
+        }
+
+        nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        nav li {
+          display: inline-block;
+          margin-right: 10px;
+        }
+
+        nav a {
+          text-decoration: none;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+        }
+
+        nav a:hover {
+          background-color: #333;
+          color: blue;
+        }
+
+        .main-content {
+          background-color: green;
+          padding: 20px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .item {
+          background-color: darkgreen;
+          border: 1px solid #ddd;
+          padding: 10px;
+          margin-bottom: 10px;
+
+        }
+
+        .section-title {
+          font-size: 24px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        .col-3 {
+          background-color: white;
+          float: left;
+          padding: 20px;
+          margin-right: 30px;
+          text-align: center;
+
+        }
+
+        .price {
+          color: red;
+          font-weight: bold;
+          font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h2 class="title">Rental Cars Management System</h2>
+    <nav>
+        <ul>
+            <li><a th:href="@{/cars}">Cars</a></li>
+            <li><a href="@{/invoices}">Invoices</a></li>
+            <li><a href="@{/rentals}">Rentals</a></li>
+            <li><a href="@{/clients}">Clients</a></li>
+            <li><a href="@{/items}">Items</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="main-content">
+    <div class="item">
+        <h3 class="section-title">Najnowsze oferty</h3>
+        <div class="row">
+            <div class="col-3">
+                <img src="img/car1.jpg" alt="Car 1">
+                <h4>Nissan GTR</h4>
+                <p>jrhvuigtrhigt</p>
+                <p class="price">200$/dzien</p>
+            </div>
+            <div class="col-3">
+                <img src="img/car2.jpg" alt="Car 2">
+                <h4>Porsche 911</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac dolor mauris.</p>
+                <p class="price">$150 / dzień</p>
+                <button><a href="#" class="button">Zarezerwuj teraz</a></button>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

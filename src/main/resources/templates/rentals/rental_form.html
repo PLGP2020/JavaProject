@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Add New Car Form</h1>
+    <form th:action="@{/add_rental}" th:object="${rental}" method="post">
+        <p>Date: <input type="date" th:field="*{dateOfOrder}"></p>
+        <p>Costs: <input type="number" th:field="*{costs}"></p>
+        <p>Number Of Days: <input type="number" th:field="*{numOfDays}"></p>
+        <p>Car: <input type="number" th:field="*{car}"></p>
+        <p>Owner: <input type="number" th:field="*{owner}"></p>
+        <p><input type="submit" value="Add new rental"></p>
+    </form>
+</body>
+</html>

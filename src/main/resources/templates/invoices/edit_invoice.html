@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Invoice</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1>Update New Invoice </h1>
+            <div class="card-body">
+                <form th:action="@{/invoices/{id}(id=${invoice.invoiceID})}" th:object="${invoice}" method="post">
+                    <div class="form-group">
+                        <label>Invoice Date Of Issue</label>
+                        <input type="date"
+                               name="dateOfIssue"
+                               th:field="${invoice.dateOfIssue}"
+                               class="form-control"
+                               placeholder="Enter date Of Issue"/>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Invoice Date Of Payment</label>
+                        <input type="date"
+                               name="dateOfPayment"
+                               th:field="${invoice.dateOfPayment}"
+                               class="form-control"
+                               placeholder="Enter date Of Payment"/>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Total Amount</label>
+                        <input type="number"
+                               name="totalAmount"
+                               th:field="${invoice.totalAmount}"
+                               class="form-control"
+                               placeholder="Enter total amount"/>
+
+                    </div>
+                    <div class="footer-body">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

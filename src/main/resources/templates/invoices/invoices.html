@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoices List</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+   <div class="container">
+       <div class="row">
+           <h1>List Invoices</h1>
+       </div>
+       <div class="row">
+           <div class="col-lg-3">
+               <a th:href = "@{/invoices/new}" class="btn btn-info">Add Invoice</a>
+           </div>
+       </div>
+       <table class="table table-striped table-bordered">
+           <thead class="table-dark">
+           <tr>
+               <th scope="col">#</th>
+               <th scope="col">Date Of Issue</th>
+               <th scope="col">Date Of Payment</th>
+               <th scope="col">Total Amount</th>
+               <th scope="col">Actions</th>
+           </tr>
+           </thead>
+           <tbody>
+             <tr th:each = "invoice: ${invoices}">
+                 <td th:text="${invoice.invoiceID}"></td>
+                 <td th:text="${invoice.dateOfIssue}"></td>
+                 <td th:text="${invoice.dateOfPayment}"></td>
+                 <td th:text = "${invoice.totalAmount}"></td>
+                 <td>
+                   <a th:href = "@{/invoices/edit/{id}(id=${invoice.invoiceID})}" class="btn btn-primary">Update</a>
+                   <a th:href = "@{/invoices/delete/{id}(id=${invoice.invoiceID})}" class="btn btn-danger">Delete</a>
+                   <a th:href = "@{/invoices/edit/{id}(id=${invoice.invoiceID})}" class="btn btn-info">Details</a>
+                 </td>
+             </tr>
+           </tbody>
+       </table>
+
+   </div>
+</body>
+</html>
